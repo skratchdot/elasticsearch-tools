@@ -1,0 +1,45 @@
+{
+  "name": "elasticsearch-tools",
+  "version": "1.0.0",
+  "description": "Elasticsearch command line tools for importing, exporting, etc",
+  "homepage": "http://github.com/skratchdot/elasticsearch-tools",
+  "preferGlobal": true,
+  "bin": {
+    "es-bulk-export": "./lib/es-bulk-export.js",
+    "es-bulk-import": "./lib/es-bulk-import.js",
+    "es-mapping-export": "./lib/es-mapping-export.js",
+    "es-mapping-import": "./lib/es-mapping-import.js"
+  },
+  "author": "skratchdot",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/skratchdot/elasticsearch-tools.git"
+  },
+  "bugs": {
+    "url": "https://github.com/skratchdot/elasticsearch-tools/issues"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "async": "^0.9.0",
+    "commander": "^2.3.0",
+    "elasticsearch": "^2.4.0",
+    "filesize": "^2.0.3",
+    "line-by-line": "^0.1.1",
+    "progress": "^1.1.8"
+  },
+  "keywords": [
+     "elasticsearch",
+     "es",
+     "cli",
+     "import",
+     "export",
+     "dump",
+     "restore",
+     "mappings",
+     "data",
+     "schema"
+  ]
+}
