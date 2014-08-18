@@ -16,10 +16,17 @@ npm install -g elasticsearch-tools
 
 After installing, you will have access to the following command line tools:
 
-- es-bulk-export
-- es-bulk-import
-- es-mapping-export
-- es-mapping-import
+#### Exporting
+- es-export-bulk
+- es-export-mappings
+- es-export-settings
+- es-export-aliases
+
+#### Importing
+- es-import-bulk
+- es-import-mappings
+- es-import-settings
+- es-import-aliases
 
 
 ## Other Elasticsearch Tools
