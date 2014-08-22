@@ -44,6 +44,9 @@ Usage: es-export-bulk [options]
     -v, --version                        output the version number
     -u, --url <url>                      the elasticsearch url to connect to
     -f, --file <file>                    the file to write data to
+    -m, --max <number>                   the maximum number of items to export. different than the scroll size
+    --transformMeta <js>                 a javascript function that returns an object
+    --transformSource <js>               a javascript function that returns an object
     --index <index>                      ES OPTION: a comma-separated list of index names to search; use _all or empty string to perform the operation on all indices
     --type <type>                        ES OPTION: a comma-separated list of document types to search; leave empty to perform the operation on all types
     --body <body>                        ES OPTION: the body to send along with this request.
@@ -54,7 +57,7 @@ Usage: es-export-bulk [options]
     --q <q>                              ES OPTION: query in the Lucene query string syntax
     --routing <routing>                  ES OPTION: a comma-separated list of specific routing values
     --scroll <scroll>                    ES OPTION: specify how long a consistent view of the index should be maintained for scrolled search (default: 1m)
-    --size <size>                        ES OPTION: number of hits to return
+    --size <size>                        ES OPTION: number of hits to return during each scan
     --sort <sort>                        ES OPTION: a comma-separated list of <field>:<direction> pairs
     --timeout <timeout>                  ES OPTION: explicit operation timeout
 ```
@@ -63,8 +66,48 @@ Usage: es-export-bulk [options]
 
 #### export 1 hour of data from local db
 ```bash
-es-export-bulk --url http://localhost:9200 --file ~/backups/elasticsearch/prod/rafflev1.json --index rafflev1 --body '
+es-export-bulk --url http://localhost:9200 --file ~/backups/elasticsearch/prod/data.json --body '
 {"query":{"range":{"timestamp":{"gte":"2014-08-13T11:00:00.000Z","lte":"2014-08-13T12:00:00.000Z"}}}}
+'
+```
+
+#### export "myIndex" from local db
+```bash
+es-export-bulk --url http://localhost:9200 --file ~/backups/elasticsearch/prod/data.json --index myIndex
+```
+
+#### only export 42 documents
+```bash
+es-export-bulk --url http://localhost:9200 --file ~/backups/elasticsearch/prod/data.json --max 42
+```
+
+#### only export 42 documents, grabbing/scanning 5 documents at a time
+```bash
+es-export-bulk --url http://localhost:9200 --file ~/backups/elasticsearch/prod/data.json --max 42 --size 5
+```
+
+#### add a key/value to all exported documents
+```bash
+es-export-bulk --url http://localhost:9200 --file ~/backups/elasticsearch/prod/data.json --transformSource 'data.foo = "neat"'
+# the return statement is optional
+es-export-bulk --url http://localhost:9200 --file ~/backups/elasticsearch/prod/data.json --transformSource 'data.foo = "neat";return data;'
+```
+
+#### delete the key "foo" from all exported documents
+```bash
+es-export-bulk --url http://localhost:9200 --file ~/backups/elasticsearch/prod/data.json --transformSource 'delete data.foo'
+```
+
+#### don't include _parent in meta data
+```bash
+es-export-bulk --url http://localhost:9200 --file ~/backups/elasticsearch/prod/data.json --transformMeta 'delete data.index._parent'
+```
+
+#### change the index name and type that we export, so we can import into a different index/type
+```bash
+es-export-bulk --url http://localhost:9200 --file ~/backups/elasticsearch/prod/data.json --transformMeta '
+data.index._index = "newIndex";
+data.index._type = "newType";
 '
 ```
 
@@ -181,7 +224,7 @@ Usage: es-import-bulk [options]
 
 #### import data to local db from file
 ```bash
-es-import-bulk --url http://localhost:9200 --file ~/backups/elasticsearch/prod/rafflev1.json
+es-import-bulk --url http://localhost:9200 --file ~/backups/elasticsearch/prod/data.json
 ```
 
 
