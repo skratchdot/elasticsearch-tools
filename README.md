@@ -17,16 +17,16 @@ npm install -g elasticsearch-tools
 After installing, you will have access to the following command line tools:
 
 #### Exporting
-- es-export-bulk
-- es-export-mappings
-- es-export-settings
-- es-export-aliases
+- [es-export-bulk](#usage-es-export-bulk)
+- [es-export-mappings](#usage-es-export-mappings)
+- [es-export-settings](#usage-es-export-settings)
+- [es-export-aliases](#usage-es-export-aliases)
 
 #### Importing
-- es-import-bulk
-- es-import-mappings
-- es-import-settings
-- es-import-aliases
+- [es-import-bulk](#usage-es-import-bulk)
+- [es-import-mappings](#usage-es-import-mappings)
+- [es-import-settings](#usage-es-import-settings)
+- [es-import-aliases](#usage-es-import-aliases)
 
 
 ## Usage: es-export-bulk
@@ -76,16 +76,6 @@ es-export-bulk --url http://localhost:9200 --file ~/backups/elasticsearch/prod/d
 es-export-bulk --url http://localhost:9200 --file ~/backups/elasticsearch/prod/data.json --index myIndex
 ```
 
-#### only export 42 documents
-```bash
-es-export-bulk --url http://localhost:9200 --file ~/backups/elasticsearch/prod/data.json --max 42
-```
-
-#### only export 42 documents, grabbing/scanning 5 documents at a time
-```bash
-es-export-bulk --url http://localhost:9200 --file ~/backups/elasticsearch/prod/data.json --max 42 --size 5
-```
-
 #### add a key/value to all exported documents
 ```bash
 es-export-bulk --url http://localhost:9200 --file ~/backups/elasticsearch/prod/data.json --transformSource 'data.foo = "neat"'
@@ -103,12 +93,9 @@ es-export-bulk --url http://localhost:9200 --file ~/backups/elasticsearch/prod/d
 es-export-bulk --url http://localhost:9200 --file ~/backups/elasticsearch/prod/data.json --transformMeta 'delete data.index._parent'
 ```
 
-#### change the index name and type that we export, so we can import into a different index/type
+#### change the index name that we export
 ```bash
-es-export-bulk --url http://localhost:9200 --file ~/backups/elasticsearch/prod/data.json --transformMeta '
-data.index._index = "newIndex";
-data.index._type = "newType";
-'
+es-export-bulk --url http://localhost:9200 --file ~/backups/elasticsearch/prod/data.json --transformMeta 'data.index._index = "newIndex"'
 ```
 
 
@@ -224,7 +211,7 @@ Usage: es-import-bulk [options]
 
 #### import data to local db from file
 ```bash
-es-import-bulk --url http://localhost:9200 --file ~/backups/elasticsearch/prod/data.json
+es-import-bulk --url http://localhost:9200 --file ~/backups/elasticsearch/prod/rafflev1.json
 ```
 
 
