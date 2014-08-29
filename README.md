@@ -45,8 +45,10 @@ Usage: es-export-bulk [options]
     -u, --url <url>                      the elasticsearch url to connect to
     -f, --file <file>                    the file to write data to
     -m, --max <number>                   the maximum number of items to export. different than the scroll size
-    --transformMeta <js>                 a javascript function that returns an object
-    --transformSource <js>               a javascript function that returns an object
+    --transformMeta <js>                 a javascript function that returns an object that is the transformed meta object
+    --transformSource <js>               a javascript function that returns an object that is the transformed source object
+    --transformMetaInit <js>             a javascript function that returns an init object that contains helpers for the transform function
+    --transformSourceInit <js>           a javascript function that returns an init object that contains helpers for the transform function
     --index <index>                      ES OPTION: a comma-separated list of index names to search; use _all or empty string to perform the operation on all indices
     --type <type>                        ES OPTION: a comma-separated list of document types to search; leave empty to perform the operation on all types
     --body <body>                        ES OPTION: the body to send along with this request.
