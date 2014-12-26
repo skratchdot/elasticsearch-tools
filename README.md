@@ -205,7 +205,7 @@ Usage: es-import-bulk [options]
     -h, --help         output usage information
     -v, --version      output the version number
     -u, --url <url>    the elasticsearch url to connect to
-    -f, --file <file>  the file to write data to
+    -f, --file <file>  the file to read data from
     -m, --max <items>  the max number of lines to process per batch
 ```
 
@@ -231,7 +231,7 @@ Usage: es-import-mappings [options]
     -h, --help                               output usage information
     -v, --version                            output the version number
     -u, --url <url>                          the elasticsearch url to connect to
-    -f, --file <file>                        the file to write data to
+    -f, --file <file>                        the file to read data from
     --ignoreConflicts <ignoreConflicts>      ES OPTION: Boolean — Specify whether to ignore conflicts while updating the mapping (default: false)
     --timeout <timeout>                      ES OPTION: Date, Number — Explicit operation timeout
     --masterTimeout <masterTimeout>          ES OPTION: Date, Number — Specify timeout for connection to master
@@ -262,7 +262,7 @@ Usage: es-import-settings [options]
     -h, --help                               output usage information
     -v, --version                            output the version number
     -u, --url <url>                          the elasticsearch url to connect to
-    -f, --file <file>                        the file to write data to
+    -f, --file <file>                        the file to read data from
     --masterTimeout <masterTimeout>          ES OPTION: Date, Number — Specify timeout for connection to master
     --ignoreUnavailable <ignoreUnavailable>  ES OPTION: Boolean — Whether specified concrete indices should be ignored when unavailable (missing or closed)
     --allowNoIndices <allowNoIndices>        ES OPTION: Boolean — Whether to ignore if a wildcard indices expression resolves into no concrete indices. (This includes _all string or when no indices have been specified)
@@ -291,7 +291,7 @@ Usage: es-import-aliases [options]
     -h, --help                       output usage information
     -v, --version                    output the version number
     -u, --url <url>                  the elasticsearch url to connect to
-    -f, --file <file>                the file to write data to
+    -f, --file <file>                the file to read data from
     --timeout <timeout>              ES OPTION: Date, Number — Explicit operation timeout
     --masterTimeout <masterTimeout>  ES OPTION: Date, Number — Specify timeout for connection to master
 ```
