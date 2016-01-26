@@ -1,6 +1,6 @@
 {
   "name": "elasticsearch-tools",
-  "version": "2.2.1",
+  "version": "3.0.0",
   "description": "Elasticsearch command line tools for importing, exporting, etc",
   "homepage": "http://github.com/skratchdot/elasticsearch-tools",
   "preferGlobal": true,
@@ -27,11 +27,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "async": "^0.9.0",
-    "commander": "^2.3.0",
-    "elasticsearch": "^10.0.1",
-    "filesize": "^2.0.3",
-    "line-by-line": "^0.1.1",
+    "async": "^1.5.2",
+    "commander": "^2.9.0",
+    "elasticsearch": "^10.1.2",
+    "filesize": "^3.2.0",
+    "line-by-line": "^0.1.4",
     "progress": "^1.1.8"
   },
   "keywords": [
@@ -47,8 +47,8 @@
     "schema"
   ],
   "devDependencies": {
-    "async": "^0.9.0",
-    "gulp": "^3.8.7",
-    "gulp-jshint": "^1.8.4"
+    "async": "^1.5.2",
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^2.0.0"
   }
 }
