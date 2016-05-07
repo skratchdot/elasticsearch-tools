@@ -45,6 +45,7 @@ Usage: es-export-bulk [options]
     -u, --url <url>                      the elasticsearch url to connect to
     -f, --file <file>                    the file to write data to
     -m, --max <number>                   the maximum number of items to export. different than the scroll size
+    -q, --quieter                        quiets the progress bar output for better performance (up to 5x better)
     --transformMeta <js>                 a javascript function that returns an object that is the transformed meta object
     --transformSource <js>               a javascript function that returns an object that is the transformed source object
     --transformMetaInit <js>             a javascript function that returns an init object that contains helpers for the transform function
@@ -207,6 +208,7 @@ Usage: es-import-bulk [options]
     -u, --url <url>    the elasticsearch url to connect to
     -f, --file <file>  the file to read data from
     -m, --max <items>  the max number of lines to process per batch
+    -q, --quieter      quiets the progress bar output for better performance (up to 5x better)
 ```
 
 ### Examples
