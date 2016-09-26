@@ -11,7 +11,6 @@ exporting _parent and _routing fields.
 ## Installation
 
 ```bash
-git clone https://github.com/phntom/elasticsearch-tools.git
 npm install -g elasticsearch-tools
 ```
 
