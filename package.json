@@ -1,8 +1,8 @@
 {
   "name": "elasticsearch-tools",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Elasticsearch command line tools for importing, exporting, etc",
-  "homepage": "http://github.com/skratchdot/elasticsearch-tools",
+  "homepage": "http://github.com/phntom/elasticsearch-tools",
   "preferGlobal": true,
   "bin": {
     "es-export-aliases": "./lib/es-export-aliases.js",
@@ -18,10 +18,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/skratchdot/elasticsearch-tools.git"
+    "url": "git://github.com/phntom/elasticsearch-tools.git"
   },
   "bugs": {
-    "url": "https://github.com/skratchdot/elasticsearch-tools/issues"
+    "url": "https://github.com/phntom/elasticsearch-tools/issues"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
