@@ -42,7 +42,7 @@ Usage: es-export-bulk [options]
 
     -h, --help                           output usage information
     -v, --version                        output the version number
-    -u, --url <url>                      the elasticsearch url to connect to
+    -u, --url <url>                      comma-separated elasticsearch urls to connect to
     -f, --file <file>                    the file to write data to
     -m, --max <number>                   the maximum number of items to export. different than the scroll size
     --transformMeta <js>                 a javascript function that returns an object that is the transformed meta object
@@ -62,6 +62,14 @@ Usage: es-export-bulk [options]
     --size <size>                        ES OPTION: number of hits to return during each scan
     --sort <sort>                        ES OPTION: a comma-separated list of <field>:<direction> pairs
     --timeout <timeout>                  ES OPTION: explicit operation timeout
+    --apiVersion <apiVersion>            ES CLIENT OPTION: the major version of the Elasticsearch nodes you will be connecting to (default: 2.3)
+    --maxRetries <maxRetries>            ES CLIENT OPTION: how many times should the client try to connect to other nodes before returning a ConnectionFault error (default: 3)
+    --requestTimeout <requestTimeout>    ES CLIENT OPTION: milliseconds before an HTTP request will be aborted and retried. This can also be set per request (default: 30000)
+    --deadTimeout <deadTimeout>          ES CLIENT OPTION: milliseconds that a dead connection will wait before attempting to revive itself (default: 60000)
+    --pingTimeout <pingTimeout>          ES CLIENT OPTION: milliseconds that a ping request can take before timing out (default: 3000)
+    --maxSockets <maxSockets>            ES CLIENT OPTION: maximum number of concurrent requests that can be made to any node (default: 10)
+    --minSockets <minSockets>            ES CLIENT OPTION: minimum number of sockets to keep connected to a node (default: 10)
+    --selector <selector>                ES CLIENT OPTION: select a connection from the ConnectionPool using roundRobin (default) or random
 ```
 
 ### Examples
