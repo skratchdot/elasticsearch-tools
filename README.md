@@ -331,17 +331,20 @@ es-import-aliases --url http://localhost:9200 --file ~/backups/elasticsearch/pro
 ## Running tests
 
 Unit tests can be ran via:
+
 ```bash
 npm run test
 ```
 
-The integration tests hit an elasticsearch server at: `localhost:20202`.  To
+The integration tests hit an elasticsearch server at: `localhost:20202`. To
 start the server, you can install [docker](https://www.docker.com), then run:
+
 ```bash
 docker-compose up
 ```
 
 One the server is running, you can run the integration tests via:
+
 ```bash
 npm run test:integration
 ```
