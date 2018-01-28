@@ -4,9 +4,8 @@ A collection of elasticsearch command line tools for doing things like bulk impo
 and exporting/importing mappings.
 
 It was created because some of the existing import/export tools ran too slow on my machine. Using
-the new bulk API seemed to speed things up dramatically.  The other tools I used also weren't
-exporting _parent and _routing fields.
-
+the new bulk API seemed to speed things up dramatically. The other tools I used also weren't
+exporting \_parent and \_routing fields.
 
 ## Installation
 
@@ -17,17 +16,18 @@ npm install -g elasticsearch-tools
 After installing, you will have access to the following command line tools:
 
 #### Exporting
-- [es-export-bulk](#usage-es-export-bulk)
-- [es-export-mappings](#usage-es-export-mappings)
-- [es-export-settings](#usage-es-export-settings)
-- [es-export-aliases](#usage-es-export-aliases)
+
+* [es-export-bulk](#usage-es-export-bulk)
+* [es-export-mappings](#usage-es-export-mappings)
+* [es-export-settings](#usage-es-export-settings)
+* [es-export-aliases](#usage-es-export-aliases)
 
 #### Importing
-- [es-import-bulk](#usage-es-import-bulk)
-- [es-import-mappings](#usage-es-import-mappings)
-- [es-import-settings](#usage-es-import-settings)
-- [es-import-aliases](#usage-es-import-aliases)
 
+* [es-import-bulk](#usage-es-import-bulk)
+* [es-import-mappings](#usage-es-import-mappings)
+* [es-import-settings](#usage-es-import-settings)
+* [es-import-aliases](#usage-es-import-aliases)
 
 ## Usage: es-export-bulk
 
@@ -75,6 +75,7 @@ Usage: es-export-bulk [options]
 ### Examples
 
 #### export 1 hour of data from local db
+
 ```bash
 es-export-bulk --url http://localhost:9200 --file ~/backups/elasticsearch/prod/data.json --body '
 {"query":{"range":{"timestamp":{"gte":"2014-08-13T11:00:00.000Z","lte":"2014-08-13T12:00:00.000Z"}}}}
@@ -82,11 +83,13 @@ es-export-bulk --url http://localhost:9200 --file ~/backups/elasticsearch/prod/d
 ```
 
 #### export "myIndex" from local db
+
 ```bash
 es-export-bulk --url http://localhost:9200 --file ~/backups/elasticsearch/prod/data.json --index myIndex
 ```
 
 #### add a key/value to all exported documents
+
 ```bash
 es-export-bulk --url http://localhost:9200 --file ~/backups/elasticsearch/prod/data.json --transformSource 'data.foo = "neat"'
 # the return statement is optional
@@ -94,20 +97,22 @@ es-export-bulk --url http://localhost:9200 --file ~/backups/elasticsearch/prod/d
 ```
 
 #### delete the key "foo" from all exported documents
+
 ```bash
 es-export-bulk --url http://localhost:9200 --file ~/backups/elasticsearch/prod/data.json --transformSource 'delete data.foo'
 ```
 
-#### don't include _parent in meta data
+#### don't include \_parent in meta data
+
 ```bash
 es-export-bulk --url http://localhost:9200 --file ~/backups/elasticsearch/prod/data.json --transformMeta 'delete data.index._parent'
 ```
 
 #### change the index name that we export
+
 ```bash
 es-export-bulk --url http://localhost:9200 --file ~/backups/elasticsearch/prod/data.json --transformMeta 'data.index._index = "newIndex"'
 ```
-
 
 ## Usage: es-export-mappings
 
@@ -135,10 +140,10 @@ Usage: es-export-mappings [options]
 ### Examples
 
 #### export mappings from local db
+
 ```bash
 es-export-mappings --url http://localhost:9200 --file ~/backups/elasticsearch/prod/prod.mappings.json
 ```
-
 
 ## Usage: es-export-settings
 
@@ -166,10 +171,10 @@ Usage: es-export-settings [options]
 ### Examples
 
 #### export settings from local db
+
 ```bash
 es-export-settings --url http://localhost:9200 --file ~/backups/elasticsearch/prod/prod.settings.json
 ```
-
 
 ## Usage: es-export-aliases
 
@@ -194,10 +199,10 @@ Usage: es-export-aliases [options]
 ### Examples
 
 #### export aliases from local db
+
 ```bash
 es-export-aliases --url http://localhost:9200 --file ~/backups/elasticsearch/prod/prod.aliases.json
 ```
-
 
 ## Usage: es-import-bulk
 
@@ -208,22 +213,23 @@ es-import-bulk --help
 
 Usage: es-import-bulk [options]
 
+
   Options:
 
-    -h, --help         output usage information
     -v, --version      output the version number
     -u, --url <url>    the elasticsearch url to connect to
     -f, --file <file>  the file to read data from
-    -m, --max <items>  the max number of lines to process per batch
+    -m, --max <items>  the max number of lines to process per batch (default: 20,000) (default: 20000)
+    -h, --help         output usage information
 ```
 
 ### Examples
 
 #### import data to local db from file
+
 ```bash
 es-import-bulk --url http://localhost:9200 --file ~/backups/elasticsearch/prod/rafflev1.json
 ```
-
 
 ## Usage: es-import-mappings
 
@@ -234,9 +240,9 @@ es-import-mappings --help
 
 Usage: es-import-mappings [options]
 
+
   Options:
 
-    -h, --help                               output usage information
     -v, --version                            output the version number
     -u, --url <url>                          the elasticsearch url to connect to
     -f, --file <file>                        the file to read data from
@@ -246,15 +252,16 @@ Usage: es-import-mappings [options]
     --ignoreUnavailable <ignoreUnavailable>  ES OPTION: Boolean — Whether specified concrete indices should be ignored when unavailable (missing or closed)
     --allowNoIndices <allowNoIndices>        ES OPTION: Boolean — Whether to ignore if a wildcard indices expression resolves into no concrete indices. (This includes _all string or when no indices have been specified)
     --expandWildcards <expandWildcards>      ES OPTION: String — Whether to expand wildcard expression to concrete indices that are open, closed or both.
+    -h, --help                               output usage information
 ```
 
 ### Examples
 
 #### import mappings to local db
+
 ```bash
 es-import-mappings --url http://localhost:9200 --file ~/backups/elasticsearch/prod/prod.mappings.json
 ```
-
 
 ## Usage: es-import-settings
 
@@ -265,9 +272,9 @@ es-import-settings --help
 
 Usage: es-import-settings [options]
 
+
   Options:
 
-    -h, --help                               output usage information
     -v, --version                            output the version number
     -u, --url <url>                          the elasticsearch url to connect to
     -f, --file <file>                        the file to read data from
@@ -275,15 +282,16 @@ Usage: es-import-settings [options]
     --ignoreUnavailable <ignoreUnavailable>  ES OPTION: Boolean — Whether specified concrete indices should be ignored when unavailable (missing or closed)
     --allowNoIndices <allowNoIndices>        ES OPTION: Boolean — Whether to ignore if a wildcard indices expression resolves into no concrete indices. (This includes _all string or when no indices have been specified)
     --expandWildcards <expandWildcards>      ES OPTION: String — Whether to expand wildcard expression to concrete indices that are open, closed or both.
+    -h, --help                               output usage information
 ```
 
 ### Examples
 
 #### import settings to local db
+
 ```bash
 es-import-settings --url http://localhost:9200 --file ~/backups/elasticsearch/prod/prod.settings.json
 ```
-
 
 ## Usage: es-import-aliases
 
@@ -294,30 +302,49 @@ es-import-aliases --help
 
 Usage: es-import-aliases [options]
 
+
   Options:
 
-    -h, --help                       output usage information
     -v, --version                    output the version number
     -u, --url <url>                  the elasticsearch url to connect to
     -f, --file <file>                the file to read data from
     --timeout <timeout>              ES OPTION: Date, Number — Explicit operation timeout
     --masterTimeout <masterTimeout>  ES OPTION: Date, Number — Specify timeout for connection to master
+    -h, --help                       output usage information
 ```
 
 ### Examples
 
 #### import aliases to local db
+
 ```bash
 es-import-aliases --url http://localhost:9200 --file ~/backups/elasticsearch/prod/prod.aliases.json
 ```
 
-
 ## Other Elasticsearch Tools
 
 #### Imports / Exports
-- [elasticdump](https://github.com/taskrabbit/elasticsearch-dump)
-- [elasticsearch-exporter](https://github.com/mallocator/Elasticsearch-Exporter)
 
+* [elasticdump](https://github.com/taskrabbit/elasticsearch-dump)
+* [elasticsearch-exporter](https://github.com/mallocator/Elasticsearch-Exporter)
+
+## Running tests
+
+Unit tests can be ran via:
+```bash
+npm run test
+```
+
+The integration tests hit an elasticsearch server at: `localhost:20202`.  To
+start the server, you can install [docker](https://www.docker.com), then run:
+```bash
+docker-compose up
+```
+
+One the server is running, you can run the integration tests via:
+```bash
+npm run test:integration
+```
 
 ## License
 

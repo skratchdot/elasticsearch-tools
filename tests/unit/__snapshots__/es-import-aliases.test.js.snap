@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`es-import-alises 1`] = `
+Array [
+  Array [
+    "putAlias",
+    "aliases",
+    "name",
+    Object {
+      "masterTimeout": "Date, Number — Specify timeout for connection to master",
+      "timeout": "Date, Number — Explicit operation timeout",
+    },
+  ],
+]
+`;

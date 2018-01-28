@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`es-export-alises 1`] = `
+Array [
+  Array [
+    "getAlias",
+    "aliases",
+    Object {
+      "index": "String, String[], Boolean — A comma-separated list of index names",
+      "local": "Boolean — Return local information, do not retrieve the state from master node (default: false)",
+      "name": "String, String[], Boolean — The name of the settings that should be included",
+    },
+  ],
+]
+`;
