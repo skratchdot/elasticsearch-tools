@@ -1,5 +1,7 @@
 _ignore/
+coverage/
 node_modules/
+tests/fixtures/working/*.txt
 .DS_Store
 .idea/
 .npm-debug.log

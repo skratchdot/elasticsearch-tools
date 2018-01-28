@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`delete all indices again test all exports 1`] = `
+"Exporting aliases for:  []
+Done!
+"
+`;
+
+exports[`delete all indices again test all exports 2`] = `
+"Command failed: node ../../lib//es-export-bulk --url http://localhost:20202 --file ../fixtures/working/3-emptyagain-bulk.txt
+
+  error: \\"no results were returned, so exiting.\\"
+"
+`;
+
+exports[`delete all indices again test all exports 3`] = `
+"Exporting mappings for:  []
+Done!
+"
+`;
+
+exports[`delete all indices again test all exports 4`] = `
+"Exporting settings for:  []
+Done!
+"
+`;
+
+exports[`importing from files client.indices.stats 1`] = `
+Array [
+  "test-lib",
+]
+`;
+
+exports[`importing from files test all exports 1`] = `
+"Exporting aliases for:  [ 'test-lib' ]
+Done!
+"
+`;
+
+exports[`importing from files test all exports 2`] = `
+"Done!
+"
+`;
+
+exports[`importing from files test all exports 3`] = `
+"Exporting mappings for:  [ 'test-lib' ]
+Done!
+"
+`;
+
+exports[`importing from files test all exports 4`] = `
+"Exporting settings for:  [ 'test-lib' ]
+Done!
+"
+`;
+
+exports[`importing from files test all imports 1`] = `
+"Creating Indexes (if needed):
+  [index=\\"test-lib\\"] - creating
+Creating settings:
+  [index=\\"test-lib\\", prop=\\"index\\"]
+Done!
+"
+`;
+
+exports[`importing from files test all imports 2`] = `
+"Creating Indexes (if needed):
+Creating aliases:
+Done!
+"
+`;
+
+exports[`importing from files test all imports 3`] = `
+"Creating Indexes (if needed):
+  [index=\\"test-lib\\"] - exists
+Creating mappings:
+  [index=\\"test-lib\\", prop=\\"groups\\"]
+Done!
+"
+`;
+
+exports[`importing from files test all imports 4`] = `
+"Pre-Processing file of size: 21.5 KB
+Starting bulk imports with batches of 20000 lines.
+Complete!
+"
+`;
+
+exports[`insert data with node lib client.indices.stats 1`] = `
+Array [
+  "test-lib",
+]
+`;
+
+exports[`insert data with node lib test all exports 1`] = `
+"Exporting aliases for:  [ 'test-lib' ]
+Done!
+"
+`;
+
+exports[`insert data with node lib test all exports 2`] = `
+"Done!
+"
+`;
+
+exports[`insert data with node lib test all exports 3`] = `
+"Exporting mappings for:  [ 'test-lib' ]
+Done!
+"
+`;
+
+exports[`insert data with node lib test all exports 4`] = `
+"Exporting settings for:  [ 'test-lib' ]
+Done!
+"
+`;
+
+exports[`with empty db test all exports 1`] = `
+"Exporting aliases for:  []
+Done!
+"
+`;
+
+exports[`with empty db test all exports 2`] = `
+"Command failed: node ../../lib//es-export-bulk --url http://localhost:20202 --file ../fixtures/working/1-empty-bulk.txt
+
+  error: \\"no results were returned, so exiting.\\"
+"
+`;
+
+exports[`with empty db test all exports 3`] = `
+"Exporting mappings for:  []
+Done!
+"
+`;
+
+exports[`with empty db test all exports 4`] = `
+"Exporting settings for:  []
+Done!
+"
+`;

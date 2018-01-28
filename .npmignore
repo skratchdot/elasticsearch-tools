@@ -1,5 +1,6 @@
 .git*
 _ignore/
+coverage/
 test/
 .DS_Store
 .gitignore
