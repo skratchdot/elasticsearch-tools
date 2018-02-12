@@ -220,6 +220,7 @@ Usage: es-import-bulk [options]
     -u, --url <url>    the elasticsearch url to connect to
     -f, --file <file>  the file to read data from
     -m, --max <items>  the max number of lines to process per batch (default: 20,000) (default: 20000)
+    --requestTimeout <ms>  ES CLIENT OPTION: milliseconds before an HTTP request will be aborted and retried. This can also be set per request (default: 30000)
     -h, --help         output usage information
 ```
 
@@ -351,5 +352,5 @@ npm run test:integration
 
 ## License
 
-Copyright (c) 2014 skratchdot  
+Copyright (c) 2014 skratchdot
 Licensed under the MIT license.
