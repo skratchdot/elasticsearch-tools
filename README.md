@@ -216,12 +216,12 @@ Usage: es-import-bulk [options]
 
   Options:
 
-    -v, --version      output the version number
-    -u, --url <url>    the elasticsearch url to connect to
-    -f, --file <file>  the file to read data from
-    -m, --max <items>  the max number of lines to process per batch (default: 20,000) (default: 20000)
-    --requestTimeout <ms>  ES CLIENT OPTION: milliseconds before an HTTP request will be aborted and retried. This can also be set per request (default: 30000)
-    -h, --help         output usage information
+    -v, --version          output the version number
+    -u, --url <url>        the elasticsearch url to connect to
+    -f, --file <file>      the file to read data from
+    -m, --max <items>      the max number of lines to process per batch (default: 20,000) (default: 20000)
+    --requestTimeout <ms>  ES CLIENT OPTION: milliseconds before an HTTP request will be aborted and retried. This can also be set per request (default: 30000) (default: 30000)
+    -h, --help             output usage information
 ```
 
 ### Examples
