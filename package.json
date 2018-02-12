@@ -1,7 +1,8 @@
 {
   "name": "elasticsearch-tools",
-  "version": "4.0.0",
-  "description": "Elasticsearch command line tools for importing, exporting, etc",
+  "version": "4.0.1",
+  "description":
+    "Elasticsearch command line tools for importing, exporting, etc",
   "homepage": "http://github.com/skratchdot/elasticsearch-tools",
   "preferGlobal": true,
   "bin": {
