@@ -17,17 +17,17 @@ After installing, you will have access to the following command line tools:
 
 #### Exporting
 
-* [es-export-bulk](#usage-es-export-bulk)
-* [es-export-mappings](#usage-es-export-mappings)
-* [es-export-settings](#usage-es-export-settings)
-* [es-export-aliases](#usage-es-export-aliases)
+- [es-export-bulk](#usage-es-export-bulk)
+- [es-export-mappings](#usage-es-export-mappings)
+- [es-export-settings](#usage-es-export-settings)
+- [es-export-aliases](#usage-es-export-aliases)
 
 #### Importing
 
-* [es-import-bulk](#usage-es-import-bulk)
-* [es-import-mappings](#usage-es-import-mappings)
-* [es-import-settings](#usage-es-import-settings)
-* [es-import-aliases](#usage-es-import-aliases)
+- [es-import-bulk](#usage-es-import-bulk)
+- [es-import-mappings](#usage-es-import-mappings)
+- [es-import-settings](#usage-es-import-settings)
+- [es-import-aliases](#usage-es-import-aliases)
 
 ## Usage: es-export-bulk
 
@@ -213,7 +213,6 @@ es-import-bulk --help
 
 Usage: es-import-bulk [options]
 
-
   Options:
 
     -v, --version          output the version number
@@ -240,7 +239,6 @@ es-import-bulk --url http://localhost:9200 --file ~/backups/elasticsearch/prod/r
 es-import-mappings --help
 
 Usage: es-import-mappings [options]
-
 
   Options:
 
@@ -273,7 +271,6 @@ es-import-settings --help
 
 Usage: es-import-settings [options]
 
-
   Options:
 
     -v, --version                            output the version number
@@ -303,7 +300,6 @@ es-import-aliases --help
 
 Usage: es-import-aliases [options]
 
-
   Options:
 
     -v, --version                    output the version number
@@ -326,8 +322,8 @@ es-import-aliases --url http://localhost:9200 --file ~/backups/elasticsearch/pro
 
 #### Imports / Exports
 
-* [elasticdump](https://github.com/taskrabbit/elasticsearch-dump)
-* [elasticsearch-exporter](https://github.com/mallocator/Elasticsearch-Exporter)
+- [elasticdump](https://github.com/taskrabbit/elasticsearch-dump)
+- [elasticsearch-exporter](https://github.com/mallocator/Elasticsearch-Exporter)
 
 ## Running tests
 
