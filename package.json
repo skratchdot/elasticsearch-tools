@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "commander": "^2.9.0",
-    "elasticsearch": "^14.2.1",
+    "elasticsearch": "^15.1.1",
     "filesize": "^3.2.0",
     "line-by-line": "^0.1.4",
     "prettier": "^1.10.2",
@@ -42,8 +42,8 @@
   },
   "devDependencies": {
     "async": "^2.6.0",
-    "eslint": "^4.16.0",
-    "jest": "^22.1.4",
+    "eslint": "^5.2.0",
+    "jest": "^23.4.1",
     "npm-run-all": "^4.1.2"
   },
   "keywords": [
